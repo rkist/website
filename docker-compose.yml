@@ -1,0 +1,33 @@
+services:
+  website_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - website_db_volume:/var/lib/postgresql/data
+    networks:
+      - website_network
+    ports:
+      - '5432:5432'
+
+  website:
+    build: .
+    restart: always
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/postgres
+    ports:
+      - '5000:5000'
+    networks:
+      - website_network
+    depends_on:
+      - website_db
+
+networks:
+  website_network:
+    driver: bridge
+
+volumes:
+  website_db_volume:
+    driver: local
