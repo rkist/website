@@ -1,12 +1,14 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def quickstart():
-    return "Hello World!"
+@app.route('/health')
+def healthcheck():
+    return "Looking good!"
+
+
 
 if __name__== '__main__':
     app.run(
         host="127.0.0.1",
-        port="8000"
+        port="5000"
     )
