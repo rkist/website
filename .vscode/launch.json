@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "website",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "./app/app.py",
+            "python": "/Users/raulkist/pyenv/versions/3.10.0/envs/website/bin/python",
+            // "args": [
+            //     "run",
+            //     "python",
+            //     "./src/app.py"
+            //   ],
+              "justMyCode": true,
+              "stopOnEntry": false,
+              "console": "integratedTerminal",
+              "env": {
+                "ENVIRONMENT": "forno",
+                // "OPENAI_API_KEY": 
+              }
+        },
+        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
