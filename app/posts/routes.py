@@ -13,21 +13,21 @@ def index():
 def about():
     return 'about page.'
 
-@bp.route('/api', methods=['POST'])
+@bp.route('/post', methods=['POST'])
 def api_post():
     data = request.get_json()
     return create_post(data)
 
-@bp.route('/api', methods=['GET'])
+@bp.route('/post', methods=['GET'])
 def api_get():
     return list_posts()
 
-@bp.route('/api', methods=['PUT'])
+@bp.route('/post', methods=['PUT'])
 def api_put():
     #TODO
     return 'TODO: api put'
 
-@bp.route('/api', methods=['DELETE'])
+@bp.route('/post', methods=['DELETE'])
 def api_delete():
     #TODO
     return 'TODO: api delete'
