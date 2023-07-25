@@ -5,14 +5,6 @@ from posts.post import create_post, list_posts
 # Create a Blueprint instance for the routes
 bp = Blueprint('post_routes', __name__)
 
-@bp.route('/')
-def index():
-    return 'index page!'
-
-@bp.route('/about')
-def about():
-    return 'about page.'
-
 @bp.route('/post', methods=['POST'])
 def api_post():
     data = request.get_json()
